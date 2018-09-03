@@ -1,0 +1,55 @@
+[user]
+    name = Chun Li
+    email = chunli.developer@gmail.com
+
+[alias]
+    hist = log --pretty=oneline --graph --decorate --all --abbrev-commit
+    diff = --ignore-space-change
+    pretty = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    st = status
+    ci = commit
+    br = branch -v
+    co = checkout
+    df = diff
+    ds = diff --staged
+    lg = log -p
+    lol = log --graph --decorate --pretty=oneline --abbrev-commit
+    lola = log --graph --decorate --pretty=oneline --abbrev-commit --all --date=local
+    ls = ls-files
+    unstage = reset HEAD
+    out = "!git log origin/master..$(git rev-parse --abbrev-ref HEAD)"
+    in = "!git log $(git rev-parse --abbrev-ref HEAD)..origin/master"
+    pull = pull --ff-only
+    merge = merge --ff-only
+
+    # Show files ignored by git:
+    ign = ls-files -o -i --exclude-standard
+
+[color]
+    branch = auto
+    diff = auto
+    interactive = auto
+    status = auto
+
+[core]
+    editor = /usr/bin/vim
+    precomposeunicode = true
+
+[merge]
+    tool = Opendiff
+[mergetool]
+    keepBackup = false
+    prompt = false
+[mergetool "Opendiff"]
+    cmd = opendiff \"$LOCAL\" \"$REMOTE\" --merge \"$MERGED\"
+    trustexitcode = true
+[diff]
+    tool = Opendiff
+[pull]
+    ff = only
+[push]
+    default = simple
+[difftool]
+    prompt = false
+[difftool "Opendiff"]
+    cmd = opendiff \"$LOCAL\" \"$REMOTE\"
