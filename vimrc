@@ -103,7 +103,7 @@ autocmd BufRead,BufNewFile *.md set spell
 """ FIXES
 " automatically rebalance windows on vim resize
 autocmd VimResized * :wincmd =
-if exists('$TMUX')  " Support resizing in tmux
+if exists('$TMUX') && !has('nvim') " Support resizing in tmux
   set ttymouse=xterm2
 endif
 " Fix Cursor in TMUX
