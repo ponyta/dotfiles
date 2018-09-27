@@ -28,6 +28,7 @@ endif
 " enable syntax highlighting
 syntax enable
 filetype plugin indent on
+colorscheme monokai
 set autoindent
 set autoread                                                 " reload files when changed on disk, i.e. via `git checkout`
 set backspace=2                                              " Fix broken backspace in some setups
