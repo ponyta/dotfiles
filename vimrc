@@ -36,7 +36,7 @@ set backspace=2                                              " Fix broken backsp
 set backupcopy=yes                                           " see :help crontab
 set cc=100                                                   " color column
 set clipboard=unnamed                                        " yank and paste with the system clipboard
-set directory-=.                                             " don't store swapfiles in the current directory
+set directory=/tmp/                                          " store swapfiles in tmp
 set encoding=utf-8
 set expandtab                                                " expand tabs to spaces
 set hlsearch                                                 " set highlight search
