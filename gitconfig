@@ -21,6 +21,7 @@
     in = "!git log $(git rev-parse --abbrev-ref HEAD)..origin/master"
     pull = pull --ff-only
     merge = merge --ff-only
+    re = remote -v
 
     # Show files ignored by git:
     ign = ls-files -o -i --exclude-standard
