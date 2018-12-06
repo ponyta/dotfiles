@@ -1,3 +1,4 @@
 [ -n "$PROFILE" ] && return || readonly PROFILE=1
 
-export PATH="$HOME/.cargo/bin:$PATH"
+# for haskell
+export PATH="$HOME/Library/Python/2.7/bin:$PATH"
