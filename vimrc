@@ -30,7 +30,7 @@ endif
 " enable syntax highlighting
 syntax enable
 filetype plugin indent on
-colorscheme monokai
+colorscheme molokai
 highlight Comment ctermfg=blue " make comments readable
 set autoindent
 set autoread                                                 " reload files when changed on disk, i.e. via `git checkout`
