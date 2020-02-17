@@ -3,8 +3,8 @@
 
 
 """ PLUGINS
-call plug#begin('~/.local/share/nvim/plugged')
-if filereadable(expand("~/.vimrc.bundles"))
+call plug#begin('~/.vim/plugged')
+ if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
 endif
 call plug#end()
