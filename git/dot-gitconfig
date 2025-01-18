@@ -2,6 +2,9 @@
     name = Chun Li
     email = chunli.developer@gmail.com
 
+[init]
+    defaultBranch = main
+
 [alias]
     hist = log --pretty=oneline --graph --decorate --all --abbrev-commit
     diff = --ignore-space-change
@@ -37,20 +40,16 @@
     precomposeunicode = true
 
 [merge]
-    tool = Opendiff
+    tool = vimdiff
 [mergetool]
     keepBackup = false
     prompt = false
-[mergetool "Opendiff"]
-    cmd = opendiff \"$LOCAL\" \"$REMOTE\" --merge \"$MERGED\"
-    trustexitcode = true
 [diff]
-    tool = Opendiff
+    tool = vimdiff
 [pull]
     ff = only
 [push]
     default = simple
 [difftool]
     prompt = false
-[difftool "Opendiff"]
-    cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+    tool = vimdiff
