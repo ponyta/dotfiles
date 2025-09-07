@@ -1,7 +1,6 @@
 """ vim config
 """ Author: Chun Li
 
-
 """ PLUGINS
 call plug#begin('~/.vim/plugged')
  if filereadable(expand("~/.vimrc.bundles"))
