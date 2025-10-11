@@ -1,4 +1,0 @@
-# Install packages locally to prevent interference with packages installed with pacman
-PATH=$PATH:~/.npm-global/bin
-export GEM_HOME="$(gem env user_gemhome)"
-PATH="$PATH:$GEM_HOME/bin"

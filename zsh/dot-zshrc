@@ -13,13 +13,16 @@ compinit
 # Simple prompt
 PROMPT='%F{magenta}%* %F{cyan}%~ %(?.%F{green}.%F{red})%#%f '
 
+# PATH configuration
+PATH=$PATH:~/.npm-global/bin
+# Install packages locally to prevent interference with packages installed with pacman
+export GEM_HOME="$(gem env user_gemhome)"
+PATH="$PATH:$GEM_HOME/bin"
+
+# Useful aliases
 alias ls='ls --color=auto'
 alias vim='nvim'
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-alias .....='cd ../../../..'
-alias ......='cd ../../../../..'
+alias open='xdg-open'
 
 # Fun tools
 alias transcat='queercat -f transgender'
