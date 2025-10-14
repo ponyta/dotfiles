@@ -1,6 +1,7 @@
 -- enables LSPs and configures useful bindings
 
-vim.lsp.enable('lua_ls')
+vim.lsp.enable 'lua_ls'
+vim.lsp.enable 'ts_ls'
 
 vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(ev)
@@ -12,11 +13,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
         vim.lsp.completion.get()
       end)
     end
-  end
+  end,
 })
 
 -- Diagnostics
-vim.diagnostic.config({
+vim.diagnostic.config {
   -- Use the default configuration
   -- virtual_lines = true
 
@@ -25,4 +26,4 @@ vim.diagnostic.config({
     -- Only show virtual line diagnostics for the current cursor line
     current_line = true,
   },
-})
+}
