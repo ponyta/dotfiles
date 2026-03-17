@@ -1,0 +1,17 @@
+#:schema https://jj-vcs.github.io/jj/latest/config-schema.json
+
+[user]
+name = "Chun Li"
+email = "chunli.developer@gmail.com"
+
+[aliases]
+# tug - move the nearest bookmark to the nearest non-empty change at or before @
+tug = ["bookmark", "move", "--from", "closest_bookmark(@)", "--to", "closest_nonempty(@)"]
+init = ["git", "init"]
+
+[revset-aliases]
+'closest_bookmark(to)' = 'heads(::to & bookmarks())'
+'closest_nonempty(to)' = 'heads(::to ~ empty())'
+
+[ui]
+default-command = "log"
