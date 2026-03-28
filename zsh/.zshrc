@@ -1,14 +1,17 @@
 HISTFILE=~/.histfile
-HISTSIZE=5000
-SAVEHIST=10000
+HISTSIZE=100000
+SAVEHIST=100000
+setopt EXTENDED_HISTORY       # save timestamps
+setopt HIST_IGNORE_ALL_DUPS   # remove older duplicate entries
+setopt HIST_IGNORE_SPACE      # don't record commands starting with space
+setopt HIST_SAVE_NO_DUPS      # don't save duplicates
+setopt SHARE_HISTORY          # share history across sessions
+
 bindkey -e # emacs bindings
 
-# The following lines were added by compinstall
-zstyle :compinstall filename '/home/chun/.zshrc'
-
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
+# Plugins (zsh-autocomplete must come before compinit; it calls compinit itself)
+source /usr/share/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Simple prompt
 PROMPT='%F{magenta}%* %F{cyan}%~ %(?.%F{green}.%F{red})%#%f '
