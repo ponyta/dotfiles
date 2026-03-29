@@ -41,6 +41,20 @@ stow -D nvim
 - Prefix: `C-a`
 - Copy uses `wl-copy` (Wayland clipboard)
 - vi-mode keys; vim-style pane navigation
+- Status bar styled with Rosé Pine hex colors (overlay bg `#26233a`, foam active window `#9ccfd8`, iris time `#c4a7e7`)
+- Extended keys enabled (`extended-keys on`) for Shift+Enter passthrough from kitty
+
+**zsh** (`zsh/.zshrc`, `zsh/.p10k.zsh`):
+
+- Prompt: Powerlevel10k with instant prompt (async rendering)
+- Custom `prompt_jj` segment in `.p10k.zsh` shows jj change ID, bookmarks, and flags (conflict/divergent/empty)
+- Plugins: `zsh-autosuggestions` (fish-like inline suggestions), `fzf` (history/file search)
+- Powerlevel10k sourced from `/usr/share/zsh-theme-powerlevel10k/` (Arch); on Debian clone manually to `~/powerlevel10k/`
+
+**kitty** (`kitty/.config/kitty/kitty.conf`):
+
+- Theme: Rosé Pine (via `current-theme.conf`)
+- `map shift+enter send_text all \x1b[13;2u` enables Shift+Enter passthrough to tmux
 
 **JJ** (`jj/.config/jj/config.toml`):
 

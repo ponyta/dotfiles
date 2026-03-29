@@ -2,10 +2,24 @@
 
 ## Install
 
+### Arch
 ```sh
-sudo pacman -S zsh-autosuggestions zsh-autocomplete fzf
-stow git zsh nvim vim tmux claude kitty
+sudo pacman -S zsh-autosuggestions fzf
+yay -S zsh-theme-powerlevel10k ttf-meslo-nerd
+stow git zsh nvim vim tmux jj kitty
 ```
+
+### Debian
+```sh
+apt install zsh zsh-autosuggestions fzf
+# Install powerlevel10k manually:
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+# Install jj from prebuilt binary or: cargo install jj-cli
+# Install MesloLGS Nerd Font manually into ~/.local/share/fonts/
+stow git zsh nvim vim tmux jj kitty
+```
+
+> Note: on Debian, zsh-autosuggestions path differs — update the `source` line in `.zshrc` if needed.
 
 ## Neovim
 
@@ -23,9 +37,17 @@ Leader key: `,`
 
 LSPs: `lua_ls`, `ts_ls`, `pyright`. Formatting on save via conform.nvim (stylua, prettier).
 
+## zsh
+
+Prompt via Powerlevel10k with instant prompt (async). Segments: directory, jj status, exit status, execution time, time.
+
+- `zsh-autosuggestions` for fish-like inline suggestions
+- `fzf` for Ctrl+R history search and Ctrl+T file search
+- Custom jj segment shows change ID, bookmarks, and conflict/divergent/empty flags
+
 ## tmux
 
-Prefix: `C-a`
+Prefix: `C-a`. Status bar styled with Rosé Pine colors.
 
 | Key                 | Action                      |
 | ------------------- | --------------------------- |
