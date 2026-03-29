@@ -1,3 +1,8 @@
+# Enable Powerlevel10k instant prompt (must be at the very top)
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 HISTFILE=~/.histfile
 HISTSIZE=100000
 SAVEHIST=100000
@@ -9,12 +14,12 @@ setopt SHARE_HISTORY          # share history across sessions
 
 bindkey -e # emacs bindings
 
-# Plugins (zsh-autocomplete must come before compinit; it calls compinit itself)
-source /usr/share/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+# Completion
+autoload -Uz compinit && compinit
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# Simple prompt
-PROMPT='%F{magenta}%* %F{cyan}%~ %(?.%F{green}.%F{red})%#%f '
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 
 # PATH configuration
 PATH=$PATH:~/.npm-global/bin
