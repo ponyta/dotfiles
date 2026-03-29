@@ -13,6 +13,9 @@ setopt HIST_SAVE_NO_DUPS      # don't save duplicates
 setopt SHARE_HISTORY          # share history across sessions
 
 bindkey -e # emacs bindings
+bindkey '\e[3~' delete-char        # Delete key
+bindkey '\e[1;3C' forward-word     # Alt+Right
+bindkey '\e[1;3D' backward-word    # Alt+Left
 
 # Completion
 autoload -Uz compinit && compinit
