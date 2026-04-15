@@ -19,9 +19,17 @@ bindkey '\e[1;3D' backward-word    # Alt+Left
 
 # Completion
 autoload -Uz compinit && compinit
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+if [[ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
+  source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+elif [[ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
+  source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
 
-source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+if [[ -f /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme ]]; then
+  source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+elif [[ -f ~/powerlevel10k/powerlevel10k.zsh-theme ]]; then
+  source ~/powerlevel10k/powerlevel10k.zsh-theme
+fi
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 
 # PATH configuration
@@ -39,5 +47,11 @@ alias open='xdg-open'
 alias transcat='queercat -f transgender'
 alias bicat='queercat -f bisexual'
 
-source <(fzf --zsh)
+# fzf shell integration: newer versions use --zsh, older Ubuntu installs use static files
+if fzf --zsh &>/dev/null; then
+  source <(fzf --zsh)
+elif [[ -f /usr/share/doc/fzf/examples/key-bindings.zsh ]]; then
+  source /usr/share/doc/fzf/examples/key-bindings.zsh
+  [[ -f /usr/share/doc/fzf/examples/completion.zsh ]] && source /usr/share/doc/fzf/examples/completion.zsh
+fi
 export PATH="$HOME/.local/bin:$PATH"

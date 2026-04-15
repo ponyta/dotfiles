@@ -11,6 +11,7 @@ stow git zsh nvim vim tmux jj kitty
 
 ### Debian
 ```sh
+apt install git zsh tmux vim neovim kitty
 apt install zsh zsh-autosuggestions fzf
 # Install powerlevel10k manually:
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k

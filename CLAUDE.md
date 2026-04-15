@@ -49,7 +49,7 @@ stow -D nvim
 - Prompt: Powerlevel10k with instant prompt (async rendering)
 - Custom `prompt_jj` segment in `.p10k.zsh` shows jj change ID, bookmarks, and flags (conflict/divergent/empty)
 - Plugins: `zsh-autosuggestions` (fish-like inline suggestions), `fzf` (history/file search)
-- Powerlevel10k sourced from `/usr/share/zsh-theme-powerlevel10k/` (Arch); on Debian clone manually to `~/powerlevel10k/`
+- Powerlevel10k: sources from `/usr/share/zsh-theme-powerlevel10k/` (Arch/system) or `~/powerlevel10k/` (Debian manual clone) — whichever exists
 
 **kitty** (`kitty/.config/kitty/kitty.conf`):
 
