@@ -20,7 +20,14 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 stow git zsh nvim vim tmux jj kitty
 ```
 
-> Note: on Debian, zsh-autosuggestions path differs — update the `source` line in `.zshrc` if needed.
+## vim
+
+Install [vim-plug](https://github.com/junegunn/vim-plug):
+
+```shell
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
 
 ## Neovim
 

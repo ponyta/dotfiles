@@ -17,6 +17,10 @@ bindkey '\e[3~' delete-char        # Delete key
 bindkey '\e[1;3C' forward-word     # Alt+Right
 bindkey '\e[1;3D' backward-word    # Alt+Left
 
+# Consume focus event sequences from tmux so they don't leak as input
+bindkey '\e[I' redisplay  # focus gained
+bindkey '\e[O' redisplay  # focus lost
+
 # Completion
 autoload -Uz compinit && compinit
 if [[ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
