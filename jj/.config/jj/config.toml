@@ -15,3 +15,4 @@ init = ["git", "init"]
 
 [ui]
 default-command = "log"
+editor = "nvim"
