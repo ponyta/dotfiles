@@ -1,6 +1,6 @@
-# Dotfiles
+# Install
 
-## Install
+## Common dependencies
 
 ### Arch
 ```sh

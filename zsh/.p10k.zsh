@@ -33,7 +33,8 @@
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
     # os_icon               # os identifier
     dir                     # current directory
-    jj                      # jujutsu status
+    jj                      # jujutsu status (hides vcs in jj repos)
+    vcs                     # git status (shown in non-jj repos only)
     # prompt_char           # prompt symbol
   )
 
@@ -1766,11 +1767,19 @@
 
   # Jujutsu (jj) prompt segment
   function prompt_jj() {
-    # Only show in jj repos
     local jj_root
-    jj_root=$(jj root 2>/dev/null) || return
+    jj_root=$(jj root 2>/dev/null)
 
-    # Get current change info: change_id (short), bookmarks, description, conflict/divergent flags
+    if [[ -z $jj_root ]]; then
+      # Not a jj repo — let vcs segment handle git display
+      p10k display '*/vcs=show'
+      return
+    fi
+
+    # In a jj repo — hide vcs (would show unhelpful "detached HEAD" for jj-backed-git)
+    p10k display '*/vcs=hide'
+
+    # Get current change info: change_id (short), bookmarks, conflict/divergent/empty flags
     local info
     info=$(jj log -r @ --no-graph -T '
       separate(" ",
